@@ -77,6 +77,9 @@ $("#form").on("success.form.bv", function(e) {
       if (info.success) {
         $("#addModal").modal("hide");
         render();
+        $("#form")
+          .data("bootstrapValidator")
+          .resetForm(true);
       }
     }
   });

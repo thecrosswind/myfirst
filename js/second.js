@@ -137,6 +137,11 @@ $("#form").on("success.form.bv", function(e) {
       if (info.success) {
         $("#secondModal").modal("hide");
         render();
+        $("#form")
+          .data("bootstrapValidator")
+          .resetForm(true);
+        $("#dropdownText").text("请选择一级分类");
+        $("#imgBox img").attr("src", "./images/none.png");
       }
     }
   });
