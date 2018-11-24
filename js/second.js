@@ -75,6 +75,7 @@ $("#fileupload").fileupload({
     var picUrl = result.picAddr;
     $("#imgBox img").attr("src", picUrl);
     $('[name="brandLogo"]').val(picUrl);
+     $('#form').data("bootstrapValidator").updateStatus( "brandLogo", "VALID" );
   }
 });
 
@@ -136,6 +137,7 @@ $("#form").on("success.form.bv", function(e) {
       console.log(info);
       if (info.success) {
         $("#secondModal").modal("hide");
+        currentPage = 1;
         render();
         $("#form")
           .data("bootstrapValidator")

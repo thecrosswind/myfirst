@@ -76,6 +76,7 @@ $("#form").on("success.form.bv", function(e) {
       // console.log(info);
       if (info.success) {
         $("#addModal").modal("hide");
+        currentPage = 1;
         render();
         $("#form")
           .data("bootstrapValidator")
